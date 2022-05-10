@@ -15,8 +15,9 @@ var isLogin = false;
 passport.use(
   new GoogleStrategy(
     {
-      clientID: process.env.clientID,
-      clientSecret: process.env.clientSecret,
+      clientID:
+        "961892973481-8liek7sb224t5hv8hjnfcpom2a09g8e5.apps.googleusercontent.com",
+      clientSecret: "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",
       callbackURL:
         "https://tranquil-chamber-01253.herokuapp.com/auth/google/callback",
       //callbackURL: "/auth/google/callback",
