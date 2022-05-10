@@ -32,6 +32,7 @@ passport.use(
 
 
 router.get('/', function (req, res) {
+  console.log("Called home page");
   res.render('login')
 })
 
