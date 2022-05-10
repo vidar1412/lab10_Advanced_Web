@@ -17,9 +17,9 @@ passport.use(
     {
       clientID: process.env.clientID,
       clientSecret: process.env.clientSecret,
-      // callbackURL:
-      //   "https://tranquil-chamber-01253.herokuapp.com/auth/google/callback",
-      callbackURL: "/auth/google/callback",
+      callbackURL:
+        "https://tranquil-chamber-01253.herokuapp.com/auth/google/callback",
+      //callbackURL: "/auth/google/callback",
     },
     function (accessToken, refreshToken, profile, done) {
       userProfile = profile;
