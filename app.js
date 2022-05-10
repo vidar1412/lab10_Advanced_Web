@@ -8,7 +8,8 @@ require('dotenv').config()
 const passport = require("passport");
 const mongoose = require("mongoose");
 
-
+// The heroku url is: https://tranquil-chamber-01253.herokuapp.com/
+//Please press sign in with google:(
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
