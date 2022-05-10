@@ -1,11 +1,13 @@
 var express = require("express");
 var router = express.Router();
 const bcrypt = require("bcrypt");
+require("dotenv").config();
 const userAccount = require("../models/user-account");
 const passport = require("passport");
 const socketio = require("socket.io");
 
-const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
+//const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
 var userProfile;
 var isLogin = false;
 
@@ -13,11 +15,11 @@ var isLogin = false;
 passport.use(
   new GoogleStrategy(
     {
-      clientID:
-        "961892973481-8liek7sb224t5hv8hjnfcpom2a09g8e5.apps.googleusercontent.com",
-      clientSecret: "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",
-      callbackURL:
-        "https://tranquil-chamber-01253.herokuapp.com/auth/google/callback",
+      clientID: process.env.clientID,
+      clientSecret: process.env.clientSecret,
+      // callbackURL:
+      //   "https://tranquil-chamber-01253.herokuapp.com/auth/google/callback",
+      callbackURL: "/auth/google/callback",
     },
     function (accessToken, refreshToken, profile, done) {
       userProfile = profile;
